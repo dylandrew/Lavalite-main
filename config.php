@@ -1,18 +1,14 @@
 <?php
-/**
- * App configurations
- */
-
 //Dev or Prod
-define('IS_DEV', true);
+define('IS_DEV', false);
 
 //Database Config
-define('DB_DRIVER', 'mysql');        // ← FILL THIS
-define('DB_HOST', 'localhost');      // ← FILL THIS
-define('DB_PORT', '3306');           // ← FILL THIS
-define('DB_NAME', 'danar_dylan_andrew_db'); // ← YOUR DB NAME
-define('DB_USERNAME', 'root');       // ← FILL THIS
-define('DB_PASSWORD', 'dylanpogi06');           // ← LEAVE BLANK for Laragon
-define('DB_CHARSET', 'utf8mb4');     // ← FILL THIS
+define('DB_DRIVER', 'mysql');
+define('DB_HOST', getenv('MYSQLHOST') ?: 'localhost');
+define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
+define('DB_NAME', getenv('MYSQLDATABASE') ?: 'danar_dylan_andrew_db');
+define('DB_USERNAME', getenv('MYSQLUSER') ?: 'root');
+define('DB_PASSWORD', getenv('MYSQLPASSWORD') ?: 'dylanpogi06');
+define('DB_CHARSET', 'utf8mb4');
 define('DB_PREFIX', '');
 define('DB_PATH', '');
